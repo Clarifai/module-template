@@ -6,6 +6,7 @@ from clarifai.modules.css import ClarifaiStreamlitCSS
 from google.protobuf import json_format, timestamp_pb2
 from stqdm import stqdm
 
+st.set_page_config(layout="wide")
 ClarifaiStreamlitCSS.insert_default_css(st)
 
 # This must be within the display() function.
