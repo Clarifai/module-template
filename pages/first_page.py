@@ -4,7 +4,6 @@ from clarifai.client import create_stub
 from clarifai.listing.lister import ClarifaiResourceLister
 from clarifai.modules.css import ClarifaiStreamlitCSS
 from google.protobuf import json_format, timestamp_pb2
-from stqdm import stqdm
 
 st.set_page_config(layout="wide")
 ClarifaiStreamlitCSS.insert_default_css(st)
@@ -30,8 +29,7 @@ if submitted:
 
   # Stream inputs from the app
   all_inputs = []
-  for inp in stqdm(
-      lister.inputs_generator(), desc="Listing all the inputs in the app", total=mtotal):
+  for inp in lister.inputs_generator():
     all_inputs.append(inp)
 
     if len(all_inputs) >= mtotal:
