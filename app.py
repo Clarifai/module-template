@@ -1,5 +1,5 @@
 import streamlit as st
-from clarifai_utils.modules.css import ClarifaiStreamlitCSS
+from clarifai.modules.css import ClarifaiStreamlitCSS
 
 st.set_page_config(layout="wide")
 
